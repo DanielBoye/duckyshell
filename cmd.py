@@ -80,6 +80,12 @@ class DuckyShell(cmd.Cmd):
         print("Exiting DuckyShell...")
         return True
 
+    def do_exit(self, arg):
+        """Exit the DuckyShell"""
+        print("Exiting DuckyShell...")
+        return True
+
+
 
 if __name__ == '__main__':
     shell = DuckyShell()
