@@ -1,11 +1,31 @@
 import cmd
 import os
+import yaml
+
+CONFIG_FILE_PATH = "/usr/bin/duckyshell_config.yaml"
 
 
 class DuckyShell(cmd.Cmd):
     intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
     prompt = "(DuckyShell) "
     usb_path = None
+
+    def __init__(self):
+        super().__init__()
+        self.load_usb_path()
+
+    def load_usb_path(self):
+        """Load the USB path from the config file"""
+        if os.path.exists(CONFIG_FILE_PATH):
+            with open(CONFIG_FILE_PATH, 'r') as config_file:
+                config = yaml.safe_load(config_file)
+                self.usb_path = config.get('usb_path')
+
+    def save_usb_path(self):
+        """Save the USB path to the config file"""
+        config = {'usb_path': self.usb_path}
+        with open(CONFIG_FILE_PATH, 'w') as config_file:
+            yaml.safe_dump(config, config_file)
 
     def do_copy_to_usb(self, file_path):
         """Copy a payload from a text file to the USB Rubber Ducky"""
@@ -34,7 +54,21 @@ class DuckyShell(cmd.Cmd):
     def do_set_usb_path(self, usb_path):
         """Set the USB path for future commands"""
         self.usb_path = usb_path
+        self.save_usb_path()
         print(f"USB path set to: {usb_path}")
+
+    def do_list_usb(self, arg):
+        """List the currently connected USB devices"""
+        if self.usb_path:
+            usb_list = os.listdir(self.usb_path)
+            if usb_list:
+                print("Connected USB devices:")
+                for device in usb_list:
+                    print(device)
+            else:
+                print("No USB devices found in the specified path.")
+        else:
+            print("USB path not provided. Use 'set_usb_path' command to set it.")
 
     def do_quit(self, arg):
         """Exit the DuckyShell"""
