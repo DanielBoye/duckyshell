@@ -70,6 +70,11 @@ class DuckyShell(cmd.Cmd):
         else:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
 
+    def do_list_config_dir(self, arg):
+        """List the directory where the config file is stored"""
+        config_dir = os.path.dirname(CONFIG_FILE_PATH)
+        print(f"Config file directory: {config_dir}")
+
     def do_quit(self, arg):
         """Exit the DuckyShell"""
         print("Exiting DuckyShell...")
