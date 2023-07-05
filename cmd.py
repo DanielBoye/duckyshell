@@ -7,7 +7,7 @@ CONFIG_FILE_PATH = "/usr/bin/duckyshell_config.yaml"
 
 class DuckyShell(cmd.Cmd):
     intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
-    prompt = "(DuckyShell) "
+    prompt = "ducky_sh3ll > "
     usb_path = None
 
     def __init__(self):
