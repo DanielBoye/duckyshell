@@ -15,3 +15,5 @@ I want the input "ducky" to be global as when downloading metasploit (msfconsole
 
 One as a straight command line tool, published as a python package
 
+
+List current connected USB, so the user does not need to provide/set new path for the usb
