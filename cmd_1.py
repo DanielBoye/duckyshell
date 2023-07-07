@@ -101,7 +101,7 @@ class DuckyShell(cmd.Cmd):
         return True
 
 
-
+# Function for running the program
 if __name__ == '__main__':
     shell = DuckyShell()
     shell.cmdloop()
