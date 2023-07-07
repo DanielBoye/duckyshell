@@ -82,6 +82,7 @@ class DuckyShell(cmd.Cmd):
         else:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
 
+    # List the config directory
     def do_list_config_dir(self, arg):
         """List the directory where the config file is stored"""
         config_dir = os.path.dirname(CONFIG_FILE_PATH)
