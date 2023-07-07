@@ -5,7 +5,7 @@ import yaml
 # Config file path
 CONFIG_FILE_PATH = "/usr/bin/duckyshell_config.yaml"
 
-
+# Class for the CLI program
 class DuckyShell(cmd.Cmd):
     intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
     prompt = "ducky_sh3ll > "
