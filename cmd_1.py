@@ -36,6 +36,7 @@ class DuckyShell(cmd.Cmd):
         with open(CONFIG_FILE_PATH, 'w') as config_file:
             yaml.safe_dump(config, config_file)
 
+    # Function for copying the file to the usb
     def do_copy_to_usb(self, file_path):
         """Copy a payload from a text file to the USB Rubber Ducky"""
         if not self.usb_path:
@@ -60,6 +61,7 @@ class DuckyShell(cmd.Cmd):
         # Delete the temporary binary file
         os.remove(binary_file_path)
 
+    # Setting the usb path for more future commands
     def do_set_usb_path(self, usb_path):
         """Set the USB path for future commands"""
         self.usb_path = usb_path
