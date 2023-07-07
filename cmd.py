@@ -2,6 +2,7 @@ import cmd
 import os
 import yaml
 
+# Config file path
 CONFIG_FILE_PATH = "/usr/bin/duckyshell_config.yaml"
 
 
