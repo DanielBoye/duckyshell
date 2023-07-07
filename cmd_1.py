@@ -21,6 +21,7 @@ class DuckyShell(cmd.Cmd):
         super().__init__()
         self.load_usb_path()
 
+    # Function for setting the usb path
     def load_usb_path(self):
         """Load the USB path from the config file"""
         if os.path.exists(CONFIG_FILE_PATH):
@@ -28,6 +29,7 @@ class DuckyShell(cmd.Cmd):
                 config = yaml.safe_load(config_file)
                 self.usb_path = config.get('usb_path')
 
+    # Function for saving the usb path
     def save_usb_path(self):
         """Save the USB path to the config file"""
         config = {'usb_path': self.usb_path}
