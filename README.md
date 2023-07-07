@@ -17,3 +17,5 @@ One as a straight command line tool, published as a python package
 
 
 List current connected USB, so the user does not need to provide/set new path for the usb
+
+I think this is the one I am going to end up to use
