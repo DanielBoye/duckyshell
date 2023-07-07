@@ -1,7 +1,7 @@
 import os
 import click
 
-
+# Will not be using this script, maybe some click functionalities
 @click.group()
 @click.option('--usb-path', type=click.Path(), help='Path to the USB drive')
 @click.pass_context
