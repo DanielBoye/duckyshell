@@ -68,6 +68,7 @@ class DuckyShell(cmd.Cmd):
         self.save_usb_path()
         print(f"USB path set to: {usb_path}")
 
+    # Listing the connected USB device 
     def do_list_usb(self, arg):
         """List the currently connected USB devices"""
         if self.usb_path:
