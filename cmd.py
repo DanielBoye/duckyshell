@@ -63,7 +63,7 @@ class DuckyShell(cmd.Cmd):
 
     # Setting the usb path for more future commands
     def do_set_usb_path(self, usb_path):
-        """Set the USB path for future commands"""
+        # Set the USB path for future commands
         self.usb_path = usb_path
         self.save_usb_path()
         print(f"USB path set to: {usb_path}")
