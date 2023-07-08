@@ -84,7 +84,7 @@ class DuckyShell(cmd.Cmd):
 
     # List the config directory
     def do_list_config_dir(self, arg):
-        """List the directory where the config file is stored"""
+        # List the directory where the config file is stored
         config_dir = os.path.dirname(CONFIG_FILE_PATH)
         print(f"Config file directory: {config_dir}")
 
