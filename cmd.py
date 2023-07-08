@@ -90,7 +90,7 @@ class DuckyShell(cmd.Cmd):
 
     # Exit command 1
     def do_quit(self, arg):
-        """Exit the DuckyShell"""
+        # Exit the DuckyShell
         print("Exiting DuckyShell...")
         return True
 
