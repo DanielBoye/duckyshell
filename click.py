@@ -44,7 +44,7 @@ def copy_to_usb(ctx, file_path):
 @click.argument('usb_path', type=click.Path())
 @click.pass_context
 def set_usb_path(ctx, usb_path):
-    """Set the USB path for future commands"""
+    # Set the USB path for future commands
     ctx.obj['usb_path'] = usb_path
     click.echo(f"USB path set to: {usb_path}")
 
