@@ -70,7 +70,7 @@ class DuckyShell(cmd.Cmd):
 
     # Listing the connected USB device 
     def do_list_usb(self, arg):
-        """List the currently connected USB devices"""
+        # List the currently connected USB devices
         if self.usb_path:
             usb_list = os.listdir(self.usb_path)
             if usb_list:
