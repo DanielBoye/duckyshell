@@ -31,7 +31,7 @@ class DuckyShell(cmd.Cmd):
 
     # Function for saving the usb path
     def save_usb_path(self):
-        """Save the USB path to the config file"""
+        # Save the USB path to the config file
         config = {'usb_path': self.usb_path}
         with open(CONFIG_FILE_PATH, 'w') as config_file:
             yaml.safe_dump(config, config_file)
