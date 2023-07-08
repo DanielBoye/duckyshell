@@ -15,7 +15,7 @@ def ducky_cli(ctx, usb_path):
 @click.argument('file_path', type=click.Path(exists=True))
 @click.pass_context
 def copy_to_usb(ctx, file_path):
-    """Copy a payload from a text file to the USB Rubber Ducky"""
+    # Copy a payload from a text file to the USB Rubber Ducky
     usb_path = ctx.obj.get('usb_path')
     if not usb_path:
         click.echo("USB path not provided. Use '--usb-path' option or set it using 'set-usb-path' command.")
