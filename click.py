@@ -6,7 +6,7 @@ import click
 @click.option('--usb-path', type=click.Path(), help='Path to the USB drive')
 @click.pass_context
 def ducky_cli(ctx, usb_path):
-    """Hak5 USB Rubber Ducky CLI"""
+    # Hak5 USB Rubber Ducky CLI
     ctx.ensure_object(dict)
     ctx.obj['usb_path'] = usb_path
 
