@@ -38,7 +38,7 @@ class DuckyShell(cmd.Cmd):
 
     # Function for copying the file to the usb
     def do_copy_to_usb(self, file_path):
-        """Copy a payload from a text file to the USB Rubber Ducky"""
+        # Copy a payload from a text file to the USB Rubber Ducky
         if not self.usb_path:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
             return
