@@ -1,0 +1,7 @@
+README.md
+setup.py
+duckyshell/duckyshell.py
+duckyshell/duckyshell.egg-info/PKG-INFO
+duckyshell/duckyshell.egg-info/SOURCES.txt
+duckyshell/duckyshell.egg-info/dependency_links.txt
+duckyshell/duckyshell.egg-info/top_level.txt
