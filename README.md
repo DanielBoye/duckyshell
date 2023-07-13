@@ -2,7 +2,10 @@
 
 ---
 
-One ducky program that is a command line program published as a python application
+A command line tool for the USB Rubber Ducky
+
+## How it should look
+
 I want the input "ducky" to be global as when downloading metasploit (msfconsole)
 
 ~$ ducky
@@ -13,11 +16,13 @@ I want the input "ducky" to be global as when downloading metasploit (msfconsole
 
 ---
 
-One as a straight command line tool, published as a python package
+## Features
+
+- Set path for USB
+- Set path for the text file
+- Flash USB with .bin file
+- List current connected USB, so the user does not need to provide/set new path for the usb
 
 
-List current connected USB, so the user does not need to provide/set new path for the usb
-
-I think this is the one I am going to end up to use
 
 Will be used for final project for CS50
