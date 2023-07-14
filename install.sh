@@ -18,7 +18,7 @@ source ~/.bashrc
 sudo chmod +x /usr/bin/duckyshell/duckyshell.py
 
 # Cleanup: remove the cloned repository
-rm -rf duckyshell
+rm -rf duckyshell/
 
 # Installation completed
 echo "DuckyShell has been installed. You can now use 'ducky' command to run it."
