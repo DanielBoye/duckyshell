@@ -30,3 +30,5 @@ Will be used for final project for CS50
 ## Update log
 
 Will work with installer script
+
+- Only on Linux yet!!!
