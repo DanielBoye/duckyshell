@@ -15,7 +15,7 @@ echo "alias ducky='python3 /usr/bin/duckyshell.py'" >> ~/.bashrc
 source ~/.bashrc
 
 # Provide executable permissions to the program
-sudo chmod +x /usr/bin/duckyshell.py
+sudo chmod +x /usr/bin/duckyshell/duckyshell.py
 
 # Cleanup: remove the cloned repository
 rm -rf duckyshell
