@@ -6,7 +6,7 @@ git clone https://github.com/DanielBoye/duckyshell.git
 # Move into the cloned repository
 
 # Copy the folder to /usr/bin
-sudo cp duckyshell /usr/bin/duckyshell
+sudo cp -R duckyshell/ /usr/bin/duckyshell
 
 # Create an alias for running duckyshell.py as 'ducky'
 echo "alias ducky='python3 /usr/bin/duckyshell.py'" >> ~/.bashrc
