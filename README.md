@@ -26,3 +26,7 @@ I want the input "ducky" to be global as when downloading metasploit (msfconsole
 
 
 Will be used for final project for CS50
+
+## Update log
+
+Will work with installer script
