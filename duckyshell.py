@@ -11,6 +11,9 @@ CONFIG_FILE_PATH = "config.yaml"
 # Class for the CLI program
 class DuckyShell(cmd.Cmd):
     
+    # Clears the screen 
+    os.system(f"clear")
+    
     # Prints out the intro
     intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
     
