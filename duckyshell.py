@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import cmd
+import subprocess
 import os
 import yaml
 
@@ -72,17 +73,27 @@ class DuckyShell(cmd.Cmd):
 
     # Listing the connected USB device 
     def do_list_usb(self, arg):
-        # List the currently connected USB devices
-        if self.usb_path:
-            usb_list = os.listdir(self.usb_path)
-            if usb_list:
-                print("Connected USB devices:")
-                for device in usb_list:
-                    print(device)
-            else:
-                print("No USB devices found in the specified path.")
+        """
+        List the connected USB devices.
+
+        Usage: list_usb
+
+        List the currently connected USB devices.
+        """
+        output = subprocess.check_output(['lsblk', '-o', 'NAME,MODEL', '-n', '-l']).decode('utf-8').strip()
+        lines = output.split('\n')
+        devices = [line.split() for line in lines]
+        usb_devices = [device for device in devices if device and (device[0].startswith('sd') or device[0].startswith('hd'))]
+        if usb_devices:
+            print("Connected USB devices:")
+            for device in usb_devices:
+                if len(device) >= 2:
+                    print(f"Name: {device[0]}   Model: {device[1]}")
+                else:
+                    print(f"Name: {device[0]}   Model: Unknown")
         else:
-            print("USB path not provided. Use 'set_usb_path' command to set it.")
+            print("No USB devices found.")
+
 
     # List the config directory
     def do_list_config_dir(self, arg):
