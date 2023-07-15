@@ -5,7 +5,7 @@ import os
 import yaml
 
 # Config file path
-CONFIG_FILE_PATH = "/usr/bin/duckyshell_config.yaml"
+CONFIG_FILE_PATH = "config.yaml"
 
 # Class for the CLI program
 class DuckyShell(cmd.Cmd):
