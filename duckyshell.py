@@ -15,7 +15,7 @@ class DuckyShell(cmd.Cmd):
     os.system(f"clear")
     
     # Prints out the intro
-    intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
+    intro = "\nHak5 USB Rubber Ducky CLI\n\nType 'help' to list available commands.\n"
     
     # Prompt for the CLI
     prompt = "ducky_sh3ll > "
