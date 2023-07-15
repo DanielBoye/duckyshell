@@ -52,8 +52,8 @@ class DuckyShell(cmd.Cmd):
             return
 
         # Check if the file is a text file
-        if not file_path.endswith('.txt'):
-            print(f"Invalid file type: {file_path} is not a text file (.txt)")
+        if not self.file_path.endswith('.txt'):
+            print(f"Invalid file type: {self.file_path} is not a text file (.txt)")
             return
 
         # Convert the text file to binary
