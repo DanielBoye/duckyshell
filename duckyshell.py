@@ -19,6 +19,7 @@ class DuckyShell(cmd.Cmd):
     
     # Setting the usb path to None for now
     usb_path = None
+    file_path = None
 
     def __init__(self):
         super().__init__()
