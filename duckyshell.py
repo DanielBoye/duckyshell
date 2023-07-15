@@ -14,7 +14,7 @@ class DuckyShell(cmd.Cmd):
     # Prints out the intro
     intro = "Hak5 USB Rubber Ducky CLI\nType 'help' to list available commands."
     
-    # Promt for the CLI
+    # Prompt for the CLI
     prompt = "ducky_sh3ll > "
     
     # Setting the usb path to None for now
