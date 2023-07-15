@@ -62,7 +62,7 @@ class DuckyShell(cmd.Cmd):
         print(f"File copied to USB drive: {self.usb_path}")
 
         # Delete the temporary binary file
-        os.remove(binary_file_path)
+        os.remove(file_path)
 
     # Setting the usb path for more future commands
     def do_set_usb_path(self, usb_path):
