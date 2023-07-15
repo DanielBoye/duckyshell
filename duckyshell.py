@@ -55,6 +55,19 @@ class DuckyShell(cmd.Cmd):
         options = [entry for entry in files_and_dirs if entry.startswith(text)]
 
         return options
+    
+    def complete_set_usb(self, text, line, begidx, endidx):
+        """
+        Called to perform tab-completion on the usb path argument of set_usb command.
+        """
+        # Get a list of files and directories in the current directory
+        current_dir = os.getcwd()
+        files_and_dirs = os.listdir(current_dir)
+
+        # Filter the list based on the current text being entered
+        options = [entry for entry in files_and_dirs if entry.startswith(text)]
+
+        return options
 
     # Function for copying the file to the usb
     def do_run(self, arg):
@@ -81,7 +94,12 @@ class DuckyShell(cmd.Cmd):
         os.remove(self.file_path)
 
     # Setting the usb path for more future commands
-    def do_set_usb(self, usb_path):
+    def do_set_usb(self, line):
+        usb_path = line.strip()
+        # Check if the USB path exists
+        if not os.path.exists(usb_path):
+            print("USB path does not exist.")
+            return
         # Set the USB path for future commands
         self.usb_path = usb_path
         self.save_usb_path()
