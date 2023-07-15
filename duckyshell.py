@@ -58,14 +58,14 @@ class DuckyShell(cmd.Cmd):
 
 
         # Copy the binary file to the USB drive
-        os.system(f"cp {binary_file_path} {self.usb_path}")
+        os.system(f"cp {file_path} {self.usb_path}")
         print(f"File copied to USB drive: {self.usb_path}")
 
         # Delete the temporary binary file
         os.remove(file_path)
 
     # Setting the usb path for more future commands
-    def do_set_usb_path(self, usb_path):
+    def do_set_usb(self, usb_path):
         # Set the USB path for future commands
         self.usb_path = usb_path
         self.save_usb_path()
@@ -96,7 +96,7 @@ class DuckyShell(cmd.Cmd):
 
 
     # List the config directory
-    def do_list_config_dir(self, arg):
+    def do_config(self, arg):
         # List the directory where the config file is stored
         config_dir = os.path.dirname(CONFIG_FILE_PATH)
         print(f"Config file directory: {config_dir}")
