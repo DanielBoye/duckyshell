@@ -42,6 +42,19 @@ class DuckyShell(cmd.Cmd):
         config = {'usb_path': self.usb_path}
         with open(CONFIG_FILE_PATH, 'w') as config_file:
             yaml.safe_dump(config, config_file)
+            
+    def complete_set_file(self, text, line, begidx, endidx):
+        """
+        Called to perform tab-completion on the file path argument of set_file command.
+        """
+        # Get a list of files and directories in the current directory
+        current_dir = os.getcwd()
+        files_and_dirs = os.listdir(current_dir)
+
+        # Filter the list based on the current text being entered
+        options = [entry for entry in files_and_dirs if entry.startswith(text)]
+
+        return options
 
     # Function for copying the file to the usb
     def do_run(self, arg):
@@ -74,8 +87,18 @@ class DuckyShell(cmd.Cmd):
         self.save_usb_path()
         print(f"USB path set to: {usb_path}")
 
-    # Setting the file path for copying
-    def do_set_file(self, file_path):
+    def do_set_file(self, line):
+        """
+        Set the file path for future copy operations.
+        Usage: set_file <file_path>
+        """
+        file_path = line.strip()
+
+        # Check if the file path exists
+        if not os.path.exists(file_path):
+            print("File path does not exist.")
+            return
+
         # Set the file path for future copy operations
         self.file_path = file_path
         print(f"File path set to: {file_path}")
