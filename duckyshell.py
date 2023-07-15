@@ -110,6 +110,9 @@ class DuckyShell(cmd.Cmd):
         config_dir = os.path.dirname(CONFIG_FILE_PATH)
         print(f"Config file directory: {config_dir}")
 
+    def emptyline(self):
+        pass
+    
     # Exit command 1
     def do_quit(self, arg):
         # Exit the DuckyShell
