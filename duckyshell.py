@@ -45,7 +45,7 @@ class DuckyShell(cmd.Cmd):
 
     # Function for copying the file to the usb
     def do_run(self, arg):
-        # Copy a payload from a text file to the USB Rubber Ducky
+        # Copy the payload from the binary file to the USB Rubber Ducky
         if not self.usb_path:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
             return
@@ -54,18 +54,18 @@ class DuckyShell(cmd.Cmd):
             print("File path not provided. Use 'set_file_path' command to set it.")
             return
 
-        # Check if the file is a text file
-        if not self.file_path.endswith('.txt'):
+        # Check if the file is a binary file
+        if not self.file_path.endswith('.bin'):
             print(f"Invalid file type: {self.file_path} is not a text file (.txt)")
             return
 
 
         # Copy the binary file to the USB drive
-        os.system(f"cp {file_path} {self.usb_path}")
+        os.system(f"cp {self.file_path} {self.usb_path}")
         print(f"File copied to USB drive: {self.usb_path}")
 
-        # Delete the temporary binary file
-        os.remove(file_path)
+        # Delete the temporary text file
+        os.remove(self.file_path)
 
     # Setting the usb path for more future commands
     def do_set_usb(self, usb_path):
