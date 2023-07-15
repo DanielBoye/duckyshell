@@ -41,10 +41,14 @@ class DuckyShell(cmd.Cmd):
             yaml.safe_dump(config, config_file)
 
     # Function for copying the file to the usb
-    def do_copy_to_usb(self, file_path):
+    def do_run(self, arg):
         # Copy a payload from a text file to the USB Rubber Ducky
         if not self.usb_path:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
+            return
+
+        if not self.file_path:
+            print("File path not provided. Use 'set_file_path' command to set it.")
             return
 
         # Check if the file is a text file
