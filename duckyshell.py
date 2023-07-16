@@ -32,7 +32,7 @@ class DuckyShell(cmd.Cmd):
     help_messages = {
         'usb': 'Set the USB path for connected USB devices.',
         'file': 'Set the file to the designated inject.bin you want.',
-        'list_usb': 'List the connected USB devices.',
+        'list': 'List the connected USB devices.',
         'run': 'Copy the inject.bin to the USB Rubber Ducky.',
         'quit': 'Exit the DuckyShell.',
         'exit': 'Exit the DuckyShell.',
@@ -131,7 +131,7 @@ class DuckyShell(cmd.Cmd):
         print(f"File path set to: {file_path}")
 
     # Listing the connected USB devices
-    def do_list_usb(self, arg):
+    def do_list(self, arg):
         output = subprocess.check_output(['lsblk', '-o', 'NAME,MODEL', '-n', '-l']).decode('utf-8').strip()
         lines = output.split('\n')
         devices = [line.split() for line in lines]
