@@ -4,6 +4,7 @@ import cmd
 import subprocess
 import os
 import yaml
+import glob
 
 # Config file path
 CONFIG_FILE_PATH = "config.yaml"
@@ -65,6 +66,11 @@ class DuckyShell(cmd.Cmd):
 
         # Returning results
         return options
+    
+    # Function to only select connected usb devices
+    def get_connected_usb_devices(self):
+        devices = glob.glob('/dev/sd*[!0-9]')
+        return [os.path.basename(device) for device in devices]
 
     # Function for copying the file to the usb
     def do_run(self, arg):
@@ -89,13 +95,14 @@ class DuckyShell(cmd.Cmd):
         # Delete the temporary text file
         os.remove(self.file_path)
 
-    # Setting the usb path for more future commands
+   # Set the USB path for connected USB devices
     def do_usb(self, line):
         usb_path = line.strip()
-        # Check if the USB path exists
-        if not os.path.exists(usb_path):
-            print("USB path does not exist.")
-            return
+        # Check if the USB device is connected
+        usb_devices = [device[0] for device in self.get_connected_usb_devices()]
+        if usb_path not in usb_devices:
+            print("USB device is not connected.")
+            return    
         # Set the USB path for future commands
         self.usb_path = usb_path
         self.save_usb_path()
