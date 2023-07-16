@@ -8,7 +8,7 @@ import glob
 import re
 
 # Config file path
-CONFIG_FILE_PATH = "config.yaml"
+CONFIG_FILE_PATH = "/usr/bin/duckyshell/config.yaml"
 
 # Class for the CLI program
 class DuckyShell(cmd.Cmd):
