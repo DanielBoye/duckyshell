@@ -16,8 +16,7 @@ class DuckyShell(cmd.Cmd):
     os.system(f"clear")
     
     # Prints out the intro
-    intro = "\nHak5 USB Rubber Ducky CLI\n\nType 'help' to list available commands.\n"
-    
+    intro = "\nHak5 USB Rubber Ducky CLI\n\nType 'help' to list available commands or 'help <command>' to get help for a specific command.\n"    
     # Prompt for the CLI
     prompt = "ducky_sh3ll > "
     
@@ -28,6 +27,17 @@ class DuckyShell(cmd.Cmd):
     def __init__(self):
         super().__init__()
         self.load_usb_path()
+    
+    # Help messages for each command
+    help_messages = {
+        'usb': 'Set the USB path for connected USB devices.',
+        'file': 'Set the file to the designated inject.bin you want.',
+        'list_usb': 'List the connected USB devices.',
+        'config': 'List the config directory.',
+        'run': 'Copy the inject.bin to the USB Rubber Ducky.',
+        'quit': 'Exit the DuckyShell.',
+        'exit': 'Exit the DuckyShell.',
+    }
 
     # Function for setting the usb path
     def load_usb_path(self):
@@ -146,6 +156,24 @@ class DuckyShell(cmd.Cmd):
 
     def emptyline(self):
         pass
+    
+    def do_help(self, arg):
+        """
+        List available commands with their usage.
+        Usage: help [command]
+        """
+        if arg:
+            # Show help for a specific command
+            if arg in self.help_messages:
+                print(self.help_messages[arg])
+            else:
+                print(f"Command '{arg}' not found.")
+        else:
+            # Show help for all commands
+            print("\nAvailable commands:")
+            for command, help_message in self.help_messages.items():
+                print(f"{command}: {help_message}")
+            print("\n")
     
     # Exit command 1
     def do_quit(self, arg):
