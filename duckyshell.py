@@ -42,11 +42,9 @@ class DuckyShell(cmd.Cmd):
         config = {'usb_path': self.usb_path}
         with open(CONFIG_FILE_PATH, 'w') as config_file:
             yaml.safe_dump(config, config_file)
-            
+    
+    # Tab autocomplete for file function
     def complete_file(self, text, line, begidx, endidx):
-        """
-        Called to perform tab-completion on the file path argument of set_file command.
-        """
         # Get a list of files and directories in the current directory
         current_dir = os.getcwd()
         files_and_dirs = os.listdir(current_dir)
@@ -56,10 +54,8 @@ class DuckyShell(cmd.Cmd):
 
         return options
     
+    # Tab autocomplete for usb function
     def complete_usb(self, text, line, begidx, endidx):
-        """
-        Called to perform tab-completion on the usb path argument of set_usb command.
-        """
         # Get a list of files and directories in the current directory
         current_dir = os.getcwd()
         files_and_dirs = os.listdir(current_dir)
@@ -67,15 +63,16 @@ class DuckyShell(cmd.Cmd):
         # Filter the list based on the current text being entered
         options = [entry for entry in files_and_dirs if entry.startswith(text)]
 
+        # Returning results
         return options
 
     # Function for copying the file to the usb
     def do_run(self, arg):
-        # Copy the payload from the binary file to the USB Rubber Ducky
+        # Check for USB path provided
         if not self.usb_path:
             print("USB path not provided. Use 'set_usb_path' command to set it.")
             return
-
+        # Check for file path provided
         if not self.file_path:
             print("File path not provided. Use 'set_file_path' command to set it.")
             return
@@ -85,8 +82,7 @@ class DuckyShell(cmd.Cmd):
             print(f"Invalid file type: {self.file_path} is not a text file (.txt)")
             return
 
-
-        # Copy the binary file to the USB drive
+        # Copy the binary file to the USB Rubber Ducky
         os.system(f"cp {self.file_path} {self.usb_path}")
         print(f"File copied to USB drive: {self.usb_path}")
 
@@ -105,11 +101,8 @@ class DuckyShell(cmd.Cmd):
         self.save_usb_path()
         print(f"USB path set to: {usb_path}")
 
+    # Set file to the designated file you want
     def do_file(self, line):
-        """
-        Set the file path for future copy operations.
-        Usage: set_file <file_path>
-        """
         file_path = line.strip()
 
         # Check if the file path exists
@@ -123,13 +116,6 @@ class DuckyShell(cmd.Cmd):
 
     # Listing the connected USB devices
     def do_list_usb(self, arg):
-        """
-        List the connected USB devices.
-
-        Usage: list_usb
-
-        List the currently connected USB devices.
-        """
         output = subprocess.check_output(['lsblk', '-o', 'NAME,MODEL', '-n', '-l']).decode('utf-8').strip()
         lines = output.split('\n')
         devices = [line.split() for line in lines]
