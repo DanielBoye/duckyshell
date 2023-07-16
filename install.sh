@@ -26,6 +26,9 @@ sudo chmod +x /usr/bin/duckyshell/duckyshell.py
 echo -e "Clean up install\n" 
 rm -rf duckyshell/
 
+# This fixes something
+source ~/.bashrc
+
 # Installation completed
 echo -e "DuckyShell has been installed.\n"
 echo -e "You can now use 'ducky' command to run it.\n"
