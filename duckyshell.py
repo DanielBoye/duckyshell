@@ -43,7 +43,7 @@ class DuckyShell(cmd.Cmd):
         with open(CONFIG_FILE_PATH, 'w') as config_file:
             yaml.safe_dump(config, config_file)
             
-    def complete_set_file(self, text, line, begidx, endidx):
+    def complete_file(self, text, line, begidx, endidx):
         """
         Called to perform tab-completion on the file path argument of set_file command.
         """
@@ -56,7 +56,7 @@ class DuckyShell(cmd.Cmd):
 
         return options
     
-    def complete_set_usb(self, text, line, begidx, endidx):
+    def complete_usb(self, text, line, begidx, endidx):
         """
         Called to perform tab-completion on the usb path argument of set_usb command.
         """
@@ -94,7 +94,7 @@ class DuckyShell(cmd.Cmd):
         os.remove(self.file_path)
 
     # Setting the usb path for more future commands
-    def do_set_usb(self, line):
+    def do_usb(self, line):
         usb_path = line.strip()
         # Check if the USB path exists
         if not os.path.exists(usb_path):
@@ -105,7 +105,7 @@ class DuckyShell(cmd.Cmd):
         self.save_usb_path()
         print(f"USB path set to: {usb_path}")
 
-    def do_set_file(self, line):
+    def do_file(self, line):
         """
         Set the file path for future copy operations.
         Usage: set_file <file_path>
