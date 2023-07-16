@@ -5,6 +5,7 @@ import subprocess
 import os
 import yaml
 import glob
+import re
 
 # Config file path
 CONFIG_FILE_PATH = "config.yaml"
@@ -124,6 +125,11 @@ class DuckyShell(cmd.Cmd):
         # Check if the file path exists
         if not os.path.exists(file_path):
             print("File path does not exist.")
+            return
+
+        # Check if the file path has the correct extension
+        if not re.match(r"inject.bin", file_path):
+            print("Invalid file format. Only 'inject.bin' files are allowed.")
             return
 
         # Set the file path for future copy operations
