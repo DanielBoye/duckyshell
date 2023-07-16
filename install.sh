@@ -7,7 +7,7 @@ echo -e "Cloning the Github repository\n"
 git clone https://github.com/DanielBoye/duckyshell.git
 
 # Copy the folder to /usr/bin
-echo -e "Copying folders\n"
+echo -e "\nCopying folders\n"
 sudo cp -R duckyshell/ /usr/bin/duckyshell
 
 # Create an alias for running duckyshell.py as 'ducky'
