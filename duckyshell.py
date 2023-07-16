@@ -33,7 +33,6 @@ class DuckyShell(cmd.Cmd):
         'usb': 'Set the USB path for connected USB devices.',
         'file': 'Set the file to the designated inject.bin you want.',
         'list_usb': 'List the connected USB devices.',
-        'config': 'List the config directory.',
         'run': 'Copy the inject.bin to the USB Rubber Ducky.',
         'quit': 'Exit the DuckyShell.',
         'exit': 'Exit the DuckyShell.',
@@ -146,13 +145,6 @@ class DuckyShell(cmd.Cmd):
                     print(f"Name: {device[0]}   Model: Unknown")
         else:
             print("No USB devices found.")
-
-
-    # List the config directory
-    def do_config(self, arg):
-        # List the directory where the config file is stored
-        config_dir = os.path.dirname(CONFIG_FILE_PATH)
-        print(f"Config file directory: {config_dir}")
 
     def emptyline(self):
         pass
