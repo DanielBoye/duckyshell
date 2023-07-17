@@ -1,4 +1,4 @@
-# ducky-cli
+# duckyshell
 
 ---
 
