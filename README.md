@@ -1,5 +1,7 @@
 # duckyshell
 
+**only works for Linux!!**
+
 ## Contents
 
 - [Introduction](#introduction)
@@ -32,8 +34,4 @@ This program is a command line tool for flashing the USB Rubber Ducky with new p
 
 Will be used for final project for CS50
 
-## Update log
 
-Will work with installer script
-
-- Only on Linux yet!!!
