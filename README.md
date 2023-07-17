@@ -1,5 +1,15 @@
 # duckyshell
 
+## Contents
+
+- [Introduction](#introduction)
+- [What it is](#what-it-is)
+- [How to install](#how-to-install)
+- [Features](#features)
+
+## Introduction
+
+
 ## What is it
 
 This program is a command line tool for flashing the USB Rubber Ducky with new payloads on the move!
