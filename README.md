@@ -1,20 +1,8 @@
 # duckyshell
 
----
+## What is it
 
-A command line tool for the USB Rubber Ducky
-
-## How it should look
-
-I want the input "ducky" to be global as when downloading metasploit (msfconsole)
-
-~$ ducky
-
-(ducky) path /mnt/usb (can also do this globaly with a yaml file maybe?)
-(ducky) file /home/user/Downloads/file.txt
-(ducky) run
-
----
+This program is a command line tool for flashing the USB Rubber Ducky with new payloads on the move!
 
 ## Features
 
