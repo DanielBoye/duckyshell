@@ -4,6 +4,13 @@
 
 This program is a command line tool for flashing the USB Rubber Ducky with new payloads on the move!
 
+## How to install
+
+1. `git clone https://github.com/DanielBoye/duckyshell`
+2. `cd duckyshell`
+3. `chmod +x install.sh`
+4. `./install.sh`
+
 ## Features
 
 - Set path for USB
