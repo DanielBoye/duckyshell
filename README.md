@@ -7,6 +7,7 @@
 - [Introduction](#introduction)
 - [What it is](#what-it-is)
 - [How to install](#how-to-install)
+- [Why?](#why?)
 - [Features](#features)
 
 ## Introduction
@@ -22,6 +23,10 @@ This program is a command line tool for flashing the USB Rubber Ducky with new p
 2. `cd duckyshell`
 3. `chmod +x install.sh`
 4. `./install.sh`
+
+# Why?
+
+
 
 ## Features
 
