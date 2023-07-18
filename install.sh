@@ -23,6 +23,9 @@ source ~/.bashrc
 echo -e "Make the program executable\n"
 sudo chmod +x /usr/bin/duckyshell/duckyshell.py
 
+# Install the requirements for the python project
+pip install -r requirements.txt
+
 # Cleanup: remove the cloned repository
 echo -e "Clean up install\n" 
 rm -rf duckyshell/
