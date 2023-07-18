@@ -19,7 +19,7 @@ This program is a command line tool for flashing the USB Rubber Ducky with new p
 
 ## How to install
 
-1. `curl -o install.sh https://github.com/DanielBoye/duckyshell/raw/main/install.sh`
+1. `curl -o install.sh -LJ https://github.com/DanielBoye/duckyshell/raw/main/install.sh`
 3. `chmod +x install.sh`
 4. `./install.sh`
 
