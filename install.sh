@@ -10,9 +10,10 @@ git clone https://github.com/DanielBoye/duckyshell.git
 echo -e "\nCopying folders\n"
 sudo cp -R duckyshell/ /usr/bin/duckyshell
 
-# Create an alias for running duckyshell.py as 'ducky'
+# Create an alias for running duckyshell.py as 'ducky' or 'duckyshell'
 echo -e "Creating aliases\n"
 echo "alias ducky='python3 /usr/bin/duckyshell/duckyshell.py'" >> ~/.bashrc
+echo "alias duckyshell='python3 /usr/bin/duckyshell/duckyshell.py'" >> ~/.bashrc
 
 # Reload the bashrc file to apply the alias
 echo -e "Reload the .bashrc file\n"
