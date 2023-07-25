@@ -5,10 +5,12 @@ A Python-based command-line tool for flashing the USB Rubber Ducky on-the-go!
 ## Contents
 
 - [Introduction](#introduction)
+   - [Key Features](#key-features) 
 - [What it is](#what-it-is)
 - [How to install](#how-to-install)
-- [Why?](#why?)
-- [Features](#features)
+- [Motivation](#motivation)
+- [Key Features](#key-features)
+- [Project Context](#project-context)
 
 ## Introduction
 
