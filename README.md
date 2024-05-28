@@ -38,14 +38,15 @@ DuckyShell is a command-line tool specifically designed for flashing the USB Rub
 
 1. Open your terminal or command prompt.
 2. Download the install.sh script using the following command:
+
    ```
    curl -o install.sh -LJ https://github.com/DanielBoye/duckyshell/raw/main/install.sh
    ```
-3. Provide execute permissions to the script:
+4. Provide execute permissions to the script:
    ```
    chmod +x install.sh
    ```
-4. Run the installation script:
+5. Run the installation script:
    ```
    ./install.sh
    ```
